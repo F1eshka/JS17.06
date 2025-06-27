@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Пошук фільмів</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        #results {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .movie {
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .movie img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .pagination {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+        }
+
+        #details {
+            margin-top: 30px;
+            padding: 20px;
+            border: 1px solid #aaa;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>🔍 Пошук фільмів</h2>
+
+    <form id="searchForm">
+        <input type="text" id="title" placeholder="Назва фільму" required>
+        <select id="type">
+            <option value="">Будь-який тип</option>
+            <option value="movie">Movie</option>
+            <option value="series">Series</option>
+            <option value="episode">Episode</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="pagination" id="pagination"></div>
+    <div id="results"></div>
+    <div id="details"></div>
+
+    <script src="movies.js"></script>
+</body>
+
+</html>
